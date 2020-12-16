@@ -35,7 +35,7 @@ const productsRouter = require('./routes/products');
  */
 
 app.use('/api/users', usersRouter);
-app.use('/api/products', productsRouter);
+app.use('/api/coin', productsRouter);
 //app.use('/api/auth', authRouter);
 //app.use('/api/orders', orderRouter);
 

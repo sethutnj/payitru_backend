@@ -17,14 +17,19 @@ router.get('/', function (req, res) {       // Sending Page Query Parameter is m
       startValue = 0;
       endValue = 10;
   } 
-  database.table('coin as c')
+  const coinid  = req.params.coin_id;
+  database.table('kingdom as k')
       
-      .withFields(['c.coin_id',
-          'c.coin_name',
-          'c.front_info'
+      .withFields(['k.kingdom_id',
+          'k.kingdom_name',
+          'k.kingdom_group',
+          'k.kingdom_group_id',
+          'k.period'
           
       ])
       .slice(startValue, endValue)
+     
+      //.filter({'c.coin_id' : coinid})
       //.sort({id: .1})
       .getAll()
       .then(prods => {
